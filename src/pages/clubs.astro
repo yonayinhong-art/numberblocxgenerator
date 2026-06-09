@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Numberblocks Clubs Explained — Prime, Square, Triangular & More"
+  description="Every Numberblock belongs to clubs based on its properties. Learn the 8 main clubs with examples."
+>
+  <header class="bg-white/80 backdrop-blur border-b border-orange-100">
+    <div class="max-w-6xl mx-auto px-4 py-3">
+      <a href="/" class="text-lg md:text-2xl font-black tracking-tight text-gray-800">
+        <span class="text-red-500">Number</span><span class="text-blue-500">blocx</span> Generator
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-8 prose prose-sm md:prose">
+    <h1>Clubs Explained</h1>
+    <p>A "club" is a group of Numberblocks that share a math property. Each number can belong to several clubs at once.</p>
+
+    <h2 id="even-odd">Even &amp; Odd</h2>
+    <p>Even numbers can be split into two equal piles: <a href="/?n=2">2</a>, <a href="/?n=4">4</a>, <a href="/?n=6">6</a>, <a href="/?n=8">8</a>, <a href="/?n=10">10</a>...</p>
+    <p>Odd numbers always have one left over: <a href="/?n=1">1</a>, <a href="/?n=3">3</a>, <a href="/?n=5">5</a>, <a href="/?n=7">7</a>, <a href="/?n=9">9</a>...</p>
+
+    <h2 id="prime">Prime</h2>
+    <p>Prime numbers can only be split into rows of 1 or rows of themselves: <a href="/?n=2">2</a>, <a href="/?n=3">3</a>, <a href="/?n=5">5</a>, <a href="/?n=7">7</a>, <a href="/?n=11">11</a>, <a href="/?n=13">13</a>, <a href="/?n=97">97</a>...</p>
+
+    <h2 id="square">Square</h2>
+    <p>Square numbers make perfect squares: <a href="/?n=1">1</a>, <a href="/?n=4">4</a>, <a href="/?n=9">9</a>, <a href="/?n=16">16</a>, <a href="/?n=25">25</a>, <a href="/?n=100">100</a>...</p>
+
+    <h2 id="cube">Cube</h2>
+    <p>Cube numbers make perfect 3D cubes: <a href="/?n=1">1</a>, <a href="/?n=8">8</a>, <a href="/?n=27">27</a>, <a href="/?n=64">64</a>, <a href="/?n=125">125</a>, <a href="/?n=1000">1000</a>...</p>
+
+    <h2 id="triangular">Triangular</h2>
+    <p>Triangular numbers stack into a triangle: <a href="/?n=1">1</a>, <a href="/?n=3">3</a>, <a href="/?n=6">6</a>, <a href="/?n=10">10</a>, <a href="/?n=15">15</a>, <a href="/?n=21">21</a>...</p>
+
+    <h2 id="power-of-2">Power of 2</h2>
+    <p>Each one is double the last: <a href="/?n=1">1</a>, <a href="/?n=2">2</a>, <a href="/?n=4">4</a>, <a href="/?n=8">8</a>, <a href="/?n=16">16</a>, <a href="/?n=1024">1024</a>...</p>
+
+    <h2 id="multiple-of-10">Multiple of 10</h2>
+    <p>Ends in zero: <a href="/?n=10">10</a>, <a href="/?n=20">20</a>, <a href="/?n=100">100</a>, <a href="/?n=1000">1000</a>...</p>
+
+    <h2>Which number has the most clubs?</h2>
+    <p>Try <a href="/?n=2520">2520</a> — it joins more clubs than most small numbers. Hit 🎲 in the generator for surprise picks.</p>
+  </main>
+</Base>
