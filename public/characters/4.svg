@@ -1,34 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
-  <rect x="0" y="100" width="100" height="100" fill="#27AE60" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
-  <rect x="0" y="100" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
-  <rect x="0" y="180" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
-  <rect x="100" y="100" width="100" height="100" fill="#27AE60" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
-  <rect x="100" y="100" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
-  <rect x="100" y="180" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
-  <rect x="0" y="0" width="100" height="100" fill="#27AE60" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
-  <rect x="0" y="0" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
-  <rect x="0" y="80" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
-  <rect x="100" y="0" width="100" height="100" fill="#27AE60" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
-  <rect x="100" y="0" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
-  <rect x="100" y="80" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 280" width="340" height="280">
+  <defs>
+    <linearGradient id="grad-4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#40c779"/>
+      <stop offset="50%" stop-color="#27AE60"/>
+      <stop offset="100%" stop-color="#0e9547"/>
+    </linearGradient>
+  </defs>
+  <rect x="70" y="140" width="100" height="100" rx="10" fill="url(#grad-4)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="78" y="148" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="170" y="140" width="100" height="100" rx="10" fill="url(#grad-4)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="178" y="148" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="70" y="40" width="100" height="100" rx="10" fill="url(#grad-4)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="78" y="48" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="170" y="40" width="100" height="100" rx="10" fill="url(#grad-4)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="178" y="48" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
 
-  <line x1="71" y1="28" x2="91" y2="28" stroke="#222" stroke-width="4" stroke-linecap="round"/>
-  <line x1="109" y1="28" x2="129" y2="28" stroke="#222" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="81" cy="42" r="17" fill="white" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
-  <circle cx="119" cy="42" r="17" fill="white" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
-  <circle cx="81" cy="44" r="8.5" fill="#222"/>
-  <circle cx="119" cy="44" r="8.5" fill="#222"/>
-  <circle cx="84" cy="39" r="2.55" fill="white"/>
-  <circle cx="122" cy="39" r="2.55" fill="white"/><path d="M 82 63 Q 100 80, 118 63"
-            stroke="#222" stroke-width="4.5" fill="none" stroke-linecap="round"/>
 
-  <text x="190" y="188"
+  <circle cx="149" cy="90" r="16" fill="white" stroke="#1a1a1a" stroke-width="2.5"/>
+  <circle cx="191" cy="90" r="16" fill="white" stroke="#1a1a1a" stroke-width="2.5"/>
+  <circle cx="149" cy="91" r="10.4" fill="#1a1a1a"/>
+  <circle cx="191" cy="91" r="10.4" fill="#1a1a1a"/>
+  <path d="M 152.2 83.6 L 154.12 87.6 L 157.8 89.2 L 154.12 90.8 L 152.2 94.8 L 150.28 90.8 L 146.6 89.2 L 150.28 87.6 Z" fill="white"/>
+  <path d="M 194.2 83.6 L 196.12 87.6 L 199.8 89.2 L 196.12 90.8 L 194.2 94.8 L 192.28 90.8 L 188.6 89.2 L 192.28 87.6 Z" fill="white"/>
+  <ellipse cx="138" cy="102" rx="8.5" ry="5.5" fill="rgba(255,140,170,0.6)"/>
+  <ellipse cx="202" cy="102" rx="8.5" ry="5.5" fill="rgba(255,140,170,0.6)"/><path d="M 154 108 Q 170 125, 186 108"
+            stroke="#1a1a1a" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+
+    <path d="M 30 117 L 33.25 126.75 L 43 130 L 33.25 133.25 L 30 143 L 26.75 133.25 L 17 130 L 26.75 126.75 Z"
+          fill="#FFEB3B" stroke="#FFA500" stroke-width="1"/>
+    <path d="M 305 145 L 307.5 152.5 L 315 155 L 307.5 157.5 L 305 165 L 302.5 157.5 L 295 155 L 302.5 152.5 Z"
+          fill="#FFEB3B" stroke="#FFA500" stroke-width="1"/>
+    <path d="M 40 232 L 42 238 L 48 240 L 42 242 L 40 248 L 38 242 L 32 240 L 38 238 Z"
+          fill="#FFEB3B" stroke="#FFA500" stroke-width="1"/>
+    <path d="M 295 219 L 297.75 227.25 L 306 230 L 297.75 232.75 L 295 241 L 292.25 232.75 L 284 230 L 292.25 227.25 Z"
+          fill="#FFEB3B" stroke="#FFA500" stroke-width="1"/>
+
+  <text x="325" y="265"
         font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
         font-weight="900"
-        font-size="42"
+        font-size="45"
         fill="white"
         stroke="rgba(0,0,0,0.6)"
-        stroke-width="4.2"
+        stroke-width="4.5"
         paint-order="stroke fill"
         text-anchor="end">4</text>
 </svg>

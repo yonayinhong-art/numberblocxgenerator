@@ -1,8 +1,8 @@
 // Generate original SVG placeholders for Numberblocks 1-30.
-// Style: colored block stacks + deterministically-varied face per N.
-// Each N gets a distinct face by hashing N → eye/smile/brow/cheek/freckle variants.
-// NOT BBC character art — replace public/characters/{n}.png with real artwork
-// to override (tier1 loader prefers .png, falls back to .svg).
+// Aim: kid-appealing "geometric cute" — rounded blocks, gradients, shiny anime
+// eyes, expressive mouths, optional waving hands, sparkles. NOT BBC character
+// art (no specific character traits like cat ears / octopus arms / specific hats).
+// Replace public/characters/{n}.png with real artwork to override.
 
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -45,149 +45,242 @@ function getDisplayLayout(n) {
   return [w, h];
 }
 
-// Deterministic per-N hash → variant index
 function pick(n, salt, mod) {
   let h = (n * 2654435761) ^ (salt * 1597463007);
   h = (h ^ (h >>> 16)) >>> 0;
   return h % mod;
 }
 
-// Whether the face color works on a dark or light block (for contrast tweaks)
-function isDarkBlock(color) {
-  // Roughly luminance check on the hex
-  const r = parseInt(color.slice(1, 3), 16);
-  const g = parseInt(color.slice(3, 5), 16);
-  const b = parseInt(color.slice(5, 7), 16);
-  return (r * 0.299 + g * 0.587 + b * 0.114) < 128;
+function lighten(hex, amt) {
+  const r = Math.min(255, parseInt(hex.slice(1, 3), 16) + amt);
+  const g = Math.min(255, parseInt(hex.slice(3, 5), 16) + amt);
+  const b = Math.min(255, parseInt(hex.slice(5, 7), 16) + amt);
+  return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
 }
 
-function drawEyes(cx, cy, B, variant, gaze) {
-  const offX = B * 0.19;
-  const offY = B * 0.08;
-  const offset = (g) => (g === 'left' ? -B * 0.025 : g === 'right' ? B * 0.025 : 0);
-  const pupilDx = offset(gaze);
+function darken(hex, amt) {
+  const r = Math.max(0, parseInt(hex.slice(1, 3), 16) - amt);
+  const g = Math.max(0, parseInt(hex.slice(3, 5), 16) - amt);
+  const b = Math.max(0, parseInt(hex.slice(5, 7), 16) - amt);
+  return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+}
 
-  if (variant === 0) {
-    // Standard round
-    const eyeR = B * 0.135;
-    const pupilR = eyeR * 0.58;
-    return `
-  <circle cx="${cx - offX}" cy="${cy - offY}" r="${eyeR}" fill="white" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
-  <circle cx="${cx + offX}" cy="${cy - offY}" r="${eyeR}" fill="white" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
-  <circle cx="${cx - offX + pupilDx}" cy="${cy - offY + 1}" r="${pupilR}" fill="#222"/>
-  <circle cx="${cx + offX + pupilDx}" cy="${cy - offY + 1}" r="${pupilR}" fill="#222"/>`;
-  }
+function blockTexture(x, y, B, variant) {
+  if (variant === 0) return '';
   if (variant === 1) {
-    // Big wide-eyed
-    const eyeR = B * 0.17;
-    const pupilR = eyeR * 0.5;
-    return `
-  <circle cx="${cx - offX}" cy="${cy - offY}" r="${eyeR}" fill="white" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
-  <circle cx="${cx + offX}" cy="${cy - offY}" r="${eyeR}" fill="white" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
-  <circle cx="${cx - offX + pupilDx}" cy="${cy - offY + 2}" r="${pupilR}" fill="#222"/>
-  <circle cx="${cx + offX + pupilDx}" cy="${cy - offY + 2}" r="${pupilR}" fill="#222"/>
-  <circle cx="${cx - offX + pupilDx + B * 0.03}" cy="${cy - offY - B * 0.03}" r="${pupilR * 0.3}" fill="white"/>
-  <circle cx="${cx + offX + pupilDx + B * 0.03}" cy="${cy - offY - B * 0.03}" r="${pupilR * 0.3}" fill="white"/>`;
+    // Polka dots
+    let dots = '';
+    for (let row = 0; row < 3; row++) {
+      for (let col = 0; col < 3; col++) {
+        const dx = x + B * 0.2 + col * B * 0.3;
+        const dy = y + B * 0.25 + row * B * 0.27;
+        dots += `<circle cx="${dx}" cy="${dy}" r="${B * 0.04}" fill="rgba(255,255,255,0.35)"/>`;
+      }
+    }
+    return dots;
   }
   if (variant === 2) {
-    // Oval narrower (sleepy/chill)
-    const eyeRX = B * 0.13;
-    const eyeRY = B * 0.07;
-    return `
-  <ellipse cx="${cx - offX}" cy="${cy - offY}" rx="${eyeRX}" ry="${eyeRY}" fill="white" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
-  <ellipse cx="${cx + offX}" cy="${cy - offY}" rx="${eyeRX}" ry="${eyeRY}" fill="white" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
-  <circle cx="${cx - offX + pupilDx}" cy="${cy - offY}" r="${eyeRY * 0.7}" fill="#222"/>
-  <circle cx="${cx + offX + pupilDx}" cy="${cy - offY}" r="${eyeRY * 0.7}" fill="#222"/>`;
+    // Diagonal stripes
+    let stripes = '';
+    for (let i = -1; i < 4; i++) {
+      const xx = x + i * B * 0.3;
+      stripes += `<line x1="${xx}" y1="${y + B}" x2="${xx + B}" y2="${y}" stroke="rgba(255,255,255,0.18)" stroke-width="${B * 0.08}"/>`;
+    }
+    return `<g clip-path="inset(0 round ${B * 0.1})">${stripes}</g>`;
   }
-  // variant === 3 — small dot eyes (calm/serious)
-  const eyeR = B * 0.085;
+  // variant 3 — cross hatch
+  let cross = '';
+  for (let i = 1; i < 4; i++) {
+    cross += `<line x1="${x}" y1="${y + i * B * 0.25}" x2="${x + B}" y2="${y + i * B * 0.25}" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>`;
+    cross += `<line x1="${x + i * B * 0.25}" y1="${y}" x2="${x + i * B * 0.25}" y2="${y + B}" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>`;
+  }
+  return cross;
+}
+
+function drawBlock(x, y, B, gradientId, textureVariant) {
   return `
-  <circle cx="${cx - offX}" cy="${cy - offY}" r="${eyeR}" fill="white" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
-  <circle cx="${cx + offX}" cy="${cy - offY}" r="${eyeR}" fill="white" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
-  <circle cx="${cx - offX + pupilDx}" cy="${cy - offY}" r="${eyeR * 0.7}" fill="#222"/>
-  <circle cx="${cx + offX + pupilDx}" cy="${cy - offY}" r="${eyeR * 0.7}" fill="#222"/>`;
+  <rect x="${x}" y="${y}" width="${B}" height="${B}" rx="${B * 0.1}" fill="url(#${gradientId})" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  ${blockTexture(x, y, B, textureVariant)}
+  <rect x="${x + B * 0.08}" y="${y + B * 0.08}" width="${B * 0.84}" height="${B * 0.15}" rx="${B * 0.05}" fill="rgba(255,255,255,0.32)"/>`;
+}
+
+function drawEyes(cx, cy, B, variant) {
+  const offX = B * 0.21;
+  if (variant === 0) {
+    // Big shiny round
+    const r = B * 0.16;
+    return `
+  <ellipse cx="${cx - offX}" cy="${cy}" rx="${r * 0.92}" ry="${r}" fill="white" stroke="#1a1a1a" stroke-width="2.5"/>
+  <ellipse cx="${cx + offX}" cy="${cy}" rx="${r * 0.92}" ry="${r}" fill="white" stroke="#1a1a1a" stroke-width="2.5"/>
+  <ellipse cx="${cx - offX + 1.5}" cy="${cy + 2}" rx="${r * 0.55}" ry="${r * 0.65}" fill="#1a1a1a"/>
+  <ellipse cx="${cx + offX + 1.5}" cy="${cy + 2}" rx="${r * 0.55}" ry="${r * 0.65}" fill="#1a1a1a"/>
+  <circle cx="${cx - offX + r * 0.25}" cy="${cy - r * 0.35}" r="${r * 0.28}" fill="white"/>
+  <circle cx="${cx + offX + r * 0.25}" cy="${cy - r * 0.35}" r="${r * 0.28}" fill="white"/>
+  <circle cx="${cx - offX - r * 0.25}" cy="${cy + r * 0.25}" r="${r * 0.13}" fill="white"/>
+  <circle cx="${cx + offX - r * 0.25}" cy="${cy + r * 0.25}" r="${r * 0.13}" fill="white"/>`;
+  }
+  if (variant === 1) {
+    // Sparkle eyes — star highlights
+    const r = B * 0.16;
+    return `
+  <circle cx="${cx - offX}" cy="${cy}" r="${r}" fill="white" stroke="#1a1a1a" stroke-width="2.5"/>
+  <circle cx="${cx + offX}" cy="${cy}" r="${r}" fill="white" stroke="#1a1a1a" stroke-width="2.5"/>
+  <circle cx="${cx - offX}" cy="${cy + 1}" r="${r * 0.65}" fill="#1a1a1a"/>
+  <circle cx="${cx + offX}" cy="${cy + 1}" r="${r * 0.65}" fill="#1a1a1a"/>
+  <path d="M ${cx - offX + r * 0.2} ${cy - r * 0.4} L ${cx - offX + r * 0.32} ${cy - r * 0.15} L ${cx - offX + r * 0.55} ${cy - r * 0.05} L ${cx - offX + r * 0.32} ${cy + r * 0.05} L ${cx - offX + r * 0.2} ${cy + r * 0.3} L ${cx - offX + r * 0.08} ${cy + r * 0.05} L ${cx - offX - r * 0.15} ${cy - r * 0.05} L ${cx - offX + r * 0.08} ${cy - r * 0.15} Z" fill="white"/>
+  <path d="M ${cx + offX + r * 0.2} ${cy - r * 0.4} L ${cx + offX + r * 0.32} ${cy - r * 0.15} L ${cx + offX + r * 0.55} ${cy - r * 0.05} L ${cx + offX + r * 0.32} ${cy + r * 0.05} L ${cx + offX + r * 0.2} ${cy + r * 0.3} L ${cx + offX + r * 0.08} ${cy + r * 0.05} L ${cx + offX - r * 0.15} ${cy - r * 0.05} L ${cx + offX + r * 0.08} ${cy - r * 0.15} Z" fill="white"/>`;
+  }
+  if (variant === 2) {
+    // Closed happy ^_^ smile eyes
+    const w = B * 0.18;
+    return `
+  <path d="M ${cx - offX - w / 2} ${cy + B * 0.04} Q ${cx - offX} ${cy - B * 0.10}, ${cx - offX + w / 2} ${cy + B * 0.04}"
+        stroke="#1a1a1a" stroke-width="${B * 0.045}" fill="none" stroke-linecap="round"/>
+  <path d="M ${cx + offX - w / 2} ${cy + B * 0.04} Q ${cx + offX} ${cy - B * 0.10}, ${cx + offX + w / 2} ${cy + B * 0.04}"
+        stroke="#1a1a1a" stroke-width="${B * 0.045}" fill="none" stroke-linecap="round"/>`;
+  }
+  // variant 3 — wink (left closed, right open)
+  const r = B * 0.16;
+  return `
+  <path d="M ${cx - offX - B * 0.1} ${cy + B * 0.02} Q ${cx - offX} ${cy - B * 0.10}, ${cx - offX + B * 0.1} ${cy + B * 0.02}"
+        stroke="#1a1a1a" stroke-width="${B * 0.045}" fill="none" stroke-linecap="round"/>
+  <ellipse cx="${cx + offX}" cy="${cy}" rx="${r * 0.92}" ry="${r}" fill="white" stroke="#1a1a1a" stroke-width="2.5"/>
+  <ellipse cx="${cx + offX + 1.5}" cy="${cy + 2}" rx="${r * 0.55}" ry="${r * 0.65}" fill="#1a1a1a"/>
+  <circle cx="${cx + offX + r * 0.25}" cy="${cy - r * 0.35}" r="${r * 0.28}" fill="white"/>`;
 }
 
 function drawMouth(cx, cy, B, variant) {
-  const sw = B * 0.045;
   if (variant === 0) {
-    // Default soft smile
-    return `<path d="M ${cx - B * 0.18} ${cy + B * 0.13} Q ${cx} ${cy + B * 0.30}, ${cx + B * 0.18} ${cy + B * 0.13}"
-            stroke="#222" stroke-width="${sw}" fill="none" stroke-linecap="round"/>`;
+    // Soft smile
+    return `<path d="M ${cx - B * 0.16} ${cy + B * 0.18} Q ${cx} ${cy + B * 0.35}, ${cx + B * 0.16} ${cy + B * 0.18}"
+            stroke="#1a1a1a" stroke-width="${B * 0.045}" fill="none" stroke-linecap="round"/>`;
   }
   if (variant === 1) {
-    // Big open grin (filled)
-    return `<path d="M ${cx - B * 0.22} ${cy + B * 0.10} Q ${cx} ${cy + B * 0.38}, ${cx + B * 0.22} ${cy + B * 0.10} Z"
-            fill="#222" stroke="#222" stroke-width="${sw}" stroke-linejoin="round"/>
-    <path d="M ${cx - B * 0.22} ${cy + B * 0.10} Q ${cx} ${cy + B * 0.16}, ${cx + B * 0.22} ${cy + B * 0.10}"
-            stroke="white" stroke-width="${sw * 1.4}" fill="white" stroke-linecap="round"/>`;
+    // Big open laugh with tongue
+    return `
+  <path d="M ${cx - B * 0.22} ${cy + B * 0.14} Q ${cx} ${cy + B * 0.46}, ${cx + B * 0.22} ${cy + B * 0.14} Z"
+        fill="#3D1820" stroke="#1a1a1a" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M ${cx - B * 0.20} ${cy + B * 0.14} Q ${cx - B * 0.07} ${cy + B * 0.20}, ${cx + B * 0.07} ${cy + B * 0.20} Q ${cx + B * 0.20} ${cy + B * 0.14}, ${cx - B * 0.20} ${cy + B * 0.14}"
+        fill="white"/>
+  <ellipse cx="${cx}" cy="${cy + B * 0.34}" rx="${B * 0.12}" ry="${B * 0.08}" fill="#FF7C8C"/>
+  <line x1="${cx}" y1="${cy + B * 0.28}" x2="${cx}" y2="${cy + B * 0.40}" stroke="#E84B5C" stroke-width="1.5"/>`;
   }
   if (variant === 2) {
-    // Small subtle smile
-    return `<path d="M ${cx - B * 0.10} ${cy + B * 0.17} Q ${cx} ${cy + B * 0.24}, ${cx + B * 0.10} ${cy + B * 0.17}"
-            stroke="#222" stroke-width="${sw}" fill="none" stroke-linecap="round"/>`;
+    // Toothy grin
+    return `
+  <path d="M ${cx - B * 0.18} ${cy + B * 0.15} Q ${cx} ${cy + B * 0.36}, ${cx + B * 0.18} ${cy + B * 0.15} Z"
+        fill="#3D1820" stroke="#1a1a1a" stroke-width="2.5"/>
+  <rect x="${cx - B * 0.05}" y="${cy + B * 0.15}" width="${B * 0.1}" height="${B * 0.1}" fill="white" stroke="#1a1a1a" stroke-width="1"/>
+  <line x1="${cx}" y1="${cy + B * 0.15}" x2="${cx}" y2="${cy + B * 0.25}" stroke="#1a1a1a" stroke-width="1"/>`;
   }
   if (variant === 3) {
-    // Tilted/cheeky smile
-    return `<path d="M ${cx - B * 0.16} ${cy + B * 0.18} Q ${cx + B * 0.02} ${cy + B * 0.30}, ${cx + B * 0.20} ${cy + B * 0.12}"
-            stroke="#222" stroke-width="${sw}" fill="none" stroke-linecap="round"/>`;
+    // Surprised "o"
+    return `<ellipse cx="${cx}" cy="${cy + B * 0.24}" rx="${B * 0.08}" ry="${B * 0.10}"
+            fill="#3D1820" stroke="#1a1a1a" stroke-width="2.5"/>`;
   }
-  // variant === 4 — round "o" (surprised/excited)
-  return `<ellipse cx="${cx}" cy="${cy + B * 0.20}" rx="${B * 0.07}" ry="${B * 0.09}"
-            fill="#222"/>`;
+  // variant 4 — cheeky tilted smirk
+  return `<path d="M ${cx - B * 0.15} ${cy + B * 0.20} Q ${cx + B * 0.02} ${cy + B * 0.32}, ${cx + B * 0.20} ${cy + B * 0.14}"
+            stroke="#1a1a1a" stroke-width="${B * 0.045}" fill="none" stroke-linecap="round"/>`;
 }
 
-function drawBrows(cx, cy, B, variant) {
-  if (variant === 0) return ''; // none
-  const sw = B * 0.04;
-  const offX = B * 0.19;
-  const offY = B * 0.22;
-  const w = B * 0.10;
-  if (variant === 1) {
-    // Flat horizontal lines (focused/cool)
-    return `
-  <line x1="${cx - offX - w}" y1="${cy - offY}" x2="${cx - offX + w}" y2="${cy - offY}" stroke="#222" stroke-width="${sw}" stroke-linecap="round"/>
-  <line x1="${cx + offX - w}" y1="${cy - offY}" x2="${cx + offX + w}" y2="${cy - offY}" stroke="#222" stroke-width="${sw}" stroke-linecap="round"/>`;
-  }
-  // variant === 2 — arched (curious/raised)
-  return `
-  <path d="M ${cx - offX - w} ${cy - offY + B * 0.02} Q ${cx - offX} ${cy - offY - B * 0.05}, ${cx - offX + w} ${cy - offY + B * 0.02}"
-        stroke="#222" stroke-width="${sw}" fill="none" stroke-linecap="round"/>
-  <path d="M ${cx + offX - w} ${cy - offY + B * 0.02} Q ${cx + offX} ${cy - offY - B * 0.05}, ${cx + offX + w} ${cy - offY + B * 0.02}"
-        stroke="#222" stroke-width="${sw}" fill="none" stroke-linecap="round"/>`;
-}
-
-function drawCheeks(cx, cy, B, variant, isDark) {
-  if (variant === 0) return ''; // none
-  const offX = B * 0.32;
-  const offY = B * 0.10;
-  const r = B * 0.06;
-  const fill = isDark ? 'rgba(255,140,170,0.55)' : 'rgba(255,80,120,0.45)';
+function drawCheeks(cx, cy, B, variant) {
+  if (variant === 0) return '';
   if (variant === 1) {
     // Round blush dots
     return `
-  <circle cx="${cx - offX}" cy="${cy + offY}" r="${r}" fill="${fill}"/>
-  <circle cx="${cx + offX}" cy="${cy + offY}" r="${r}" fill="${fill}"/>`;
+  <ellipse cx="${cx - B * 0.32}" cy="${cy + B * 0.12}" rx="${B * 0.085}" ry="${B * 0.055}" fill="rgba(255,140,170,0.6)"/>
+  <ellipse cx="${cx + B * 0.32}" cy="${cy + B * 0.12}" rx="${B * 0.085}" ry="${B * 0.055}" fill="rgba(255,140,170,0.6)"/>`;
   }
-  // variant === 2 — three tiny freckle dots on each side
+  // variant 2 — three freckles each side
+  const fill = 'rgba(255,255,255,0.7)';
   return `
-  <circle cx="${cx - offX}" cy="${cy + offY - r * 0.8}" r="${r * 0.35}" fill="${fill}"/>
-  <circle cx="${cx - offX - r * 0.9}" cy="${cy + offY + r * 0.3}" r="${r * 0.35}" fill="${fill}"/>
-  <circle cx="${cx - offX + r * 0.9}" cy="${cy + offY + r * 0.3}" r="${r * 0.35}" fill="${fill}"/>
-  <circle cx="${cx + offX}" cy="${cy + offY - r * 0.8}" r="${r * 0.35}" fill="${fill}"/>
-  <circle cx="${cx + offX + r * 0.9}" cy="${cy + offY + r * 0.3}" r="${r * 0.35}" fill="${fill}"/>
-  <circle cx="${cx + offX - r * 0.9}" cy="${cy + offY + r * 0.3}" r="${r * 0.35}" fill="${fill}"/>`;
+  <circle cx="${cx - B * 0.30}" cy="${cy + B * 0.08}" r="${B * 0.018}" fill="${fill}"/>
+  <circle cx="${cx - B * 0.34}" cy="${cy + B * 0.14}" r="${B * 0.018}" fill="${fill}"/>
+  <circle cx="${cx - B * 0.28}" cy="${cy + B * 0.16}" r="${B * 0.018}" fill="${fill}"/>
+  <circle cx="${cx + B * 0.30}" cy="${cy + B * 0.08}" r="${B * 0.018}" fill="${fill}"/>
+  <circle cx="${cx + B * 0.34}" cy="${cy + B * 0.14}" r="${B * 0.018}" fill="${fill}"/>
+  <circle cx="${cx + B * 0.28}" cy="${cy + B * 0.16}" r="${B * 0.018}" fill="${fill}"/>`;
+}
+
+function drawHand(side, cx, cy, B, color, variant) {
+  // side: 'left' or 'right', position relative to the character shape
+  if (variant === 0) return '';
+  const sign = side === 'left' ? -1 : 1;
+  // Arm pivot: attach point on body
+  const ax = cx + sign * B * 0.55;
+  const ay = cy + B * 0.2;
+  // Hand position (waving up)
+  const hx = ax + sign * B * 0.45;
+  const hy = ay - B * 0.4;
+  const armColor = darken(color, 30);
+  if (variant === 1) {
+    // Waving small hand
+    return `
+  <path d="M ${ax} ${ay} Q ${ax + sign * B * 0.2} ${ay - B * 0.05}, ${hx} ${hy}"
+        stroke="${armColor}" stroke-width="${B * 0.16}" fill="none" stroke-linecap="round"/>
+  <circle cx="${hx}" cy="${hy}" r="${B * 0.18}" fill="${color}" stroke="#1a1a1a" stroke-width="2"/>
+  <path d="M ${hx - B * 0.08} ${hy - B * 0.05} Q ${hx} ${hy - B * 0.18}, ${hx + B * 0.08} ${hy - B * 0.05}"
+        stroke="#1a1a1a" stroke-width="1.5" fill="none"/>`;
+  }
+  // variant 2 — peace/star hand
+  return `
+  <path d="M ${ax} ${ay} Q ${ax + sign * B * 0.2} ${ay - B * 0.05}, ${hx} ${hy}"
+        stroke="${armColor}" stroke-width="${B * 0.14}" fill="none" stroke-linecap="round"/>
+  <circle cx="${hx}" cy="${hy}" r="${B * 0.18}" fill="${color}" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="${hx - B * 0.06}" y1="${hy - B * 0.05}" x2="${hx - B * 0.12}" y2="${hy - B * 0.20}" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="${hx + B * 0.06}" y1="${hy - B * 0.05}" x2="${hx + B * 0.12}" y2="${hy - B * 0.20}" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>`;
+}
+
+function drawSparkles(cx, cy, W, H, B, variant) {
+  if (variant === 0) return '';
+  const spark = (x, y, size) => `
+    <path d="M ${x} ${y - size} L ${x + size * 0.25} ${y - size * 0.25} L ${x + size} ${y} L ${x + size * 0.25} ${y + size * 0.25} L ${x} ${y + size} L ${x - size * 0.25} ${y + size * 0.25} L ${x - size} ${y} L ${x - size * 0.25} ${y - size * 0.25} Z"
+          fill="#FFEB3B" stroke="#FFA500" stroke-width="1"/>`;
+  // 4 sparkles around the corners outside body
+  return [
+    spark(B * 0.3, cy - B * 0.1, B * 0.13),
+    spark(W - B * 0.35, cy + B * 0.15, B * 0.10),
+    spark(B * 0.4, H - B * 0.4, B * 0.08),
+    spark(W - B * 0.45, H - B * 0.5, B * 0.11),
+  ].join('');
 }
 
 function generateSvg(n) {
   const [cols, rows] = getDisplayLayout(n);
   const B = 100;
-  const W = cols * B;
-  const H = rows * B;
+  const charW = cols * B;
+  const charH = rows * B;
+  // Pad so hand + sparkles don't clip
+  const padX = B * 0.7;
+  const padY = B * 0.4;
+  const W = charW + padX * 2;
+  const H = charH + padY * 2;
+  const ox = padX;
+  const oy = padY;
   const color = getColor(n);
-  const dark = isDarkBlock(color);
   const lastRowCount = ((n - 1) % cols) + 1;
 
+  // Variants
+  const eyeV = pick(n, 1, 4);
+  const mouthV = pick(n, 2, 5);
+  const cheekV = pick(n, 3, 3);
+  const textureV = pick(n, 4, 4);
+  const handV = pick(n, 5, 3);
+  const handSide = pick(n, 6, 2) === 0 ? 'left' : 'right';
+  const sparkV = pick(n, 7, 2);
+
+  // Gradient def
+  const gradientId = `grad-${n}`;
+  const gradientDef = `
+  <defs>
+    <linearGradient id="${gradientId}" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="${lighten(color, 25)}"/>
+      <stop offset="50%" stop-color="${color}"/>
+      <stop offset="100%" stop-color="${darken(color, 25)}"/>
+    </linearGradient>
+  </defs>`;
+
+  // Blocks
   let blocks = '';
   let drawn = 0;
   for (let row = 0; row < rows; row++) {
@@ -195,38 +288,32 @@ function generateSvg(n) {
     const offsetX = ((cols - inRow) * B) / 2;
     for (let col = 0; col < inRow; col++) {
       if (drawn >= n) break;
-      const x = offsetX + col * B;
-      const y = (rows - 1 - row) * B;
-      blocks += `
-  <rect x="${x}" y="${y}" width="${B}" height="${B}" fill="${color}" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
-  <rect x="${x}" y="${y}" width="${B}" height="${B * 0.2}" fill="rgba(255,255,255,0.22)"/>
-  <rect x="${x}" y="${y + B * 0.8}" width="${B}" height="${B * 0.2}" fill="rgba(0,0,0,0.14)"/>`;
+      const x = ox + offsetX + col * B;
+      const y = oy + (rows - 1 - row) * B;
+      blocks += drawBlock(x, y, B, gradientId, textureV);
       drawn++;
     }
   }
 
-  // Face on top row, centered over occupied cells
+  // Face on top row centered
   const topRowOffsetX = ((cols - lastRowCount) * B) / 2;
-  const faceCx = topRowOffsetX + (lastRowCount * B) / 2;
-  const faceCy = B / 2;
+  const faceCx = ox + topRowOffsetX + (lastRowCount * B) / 2;
+  const faceCy = oy + B / 2;
 
-  // Pick variants deterministically per N
-  const eyeV = pick(n, 1, 4);
-  const mouthV = pick(n, 2, 5);
-  const browV = pick(n, 3, 3);
-  const cheekV = pick(n, 4, 3);
-  const gazeIdx = pick(n, 5, 3);
-  const gaze = ['center', 'left', 'right'][gazeIdx];
-
-  const face = drawBrows(faceCx, faceCy, B, browV)
-    + drawEyes(faceCx, faceCy, B, eyeV, gaze)
-    + drawCheeks(faceCx, faceCy, B, cheekV, dark)
+  const face = drawEyes(faceCx, faceCy, B, eyeV)
+    + drawCheeks(faceCx, faceCy, B, cheekV)
     + drawMouth(faceCx, faceCy, B, mouthV);
 
-  // Number label — bottom-right corner of the artwork
-  const labelSize = Math.min(B * 0.42, (B * 0.7) / Math.max(1, String(n).length / 2));
+  // Hand (sticks out from middle of character body)
+  const hand = drawHand(handSide, ox + charW / 2, oy + charH / 2, B, color, handV);
+
+  // Sparkles
+  const sparkles = drawSparkles(W / 2, H / 2, W, H, B, sparkV);
+
+  // Number label — bottom corner
+  const labelSize = B * 0.45;
   const numberLabel = `
-  <text x="${W - B * 0.1}" y="${H - B * 0.12}"
+  <text x="${W - B * 0.15}" y="${H - B * 0.15}"
         font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
         font-weight="900"
         font-size="${labelSize}"
@@ -236,8 +323,10 @@ function generateSvg(n) {
         paint-order="stroke fill"
         text-anchor="end">${n}</text>`;
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">${blocks}
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">${gradientDef}${blocks}
+${hand}
 ${face}
+${sparkles}
 ${numberLabel}
 </svg>
 `;
@@ -247,4 +336,4 @@ mkdirSync(OUT_DIR, { recursive: true });
 for (let n = 1; n <= 30; n++) {
   writeFileSync(join(OUT_DIR, `${n}.svg`), generateSvg(n));
 }
-console.log(`Generated 30 SVG placeholders (with per-N face variants) in ${OUT_DIR}`);
+console.log(`Generated 30 polished SVG placeholders in ${OUT_DIR}`);
