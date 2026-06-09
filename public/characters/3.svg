@@ -1,28 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 300" width="100" height="300">
-  <rect x="0" y="200" width="100" height="100" fill="#F1C40F" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="0" y="200" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="0" y="282" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
-  <rect x="0" y="100" width="100" height="100" fill="#F1C40F" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="0" y="100" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="0" y="182" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
-  <rect x="0" y="0" width="100" height="100" fill="#F1C40F" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="0" y="0" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="0" y="82" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
+  <rect x="0" y="200" width="100" height="100" fill="#F1C40F" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="0" y="200" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="0" y="280" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
+  <rect x="0" y="100" width="100" height="100" fill="#F1C40F" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="0" y="100" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="0" y="180" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
+  <rect x="0" y="0" width="100" height="100" fill="#F1C40F" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="0" y="0" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="0" y="80" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
 
-  <circle cx="31" cy="42" r="13.5" fill="white"/>
-  <circle cx="32" cy="43" r="8.1" fill="#222"/>
-  <circle cx="69" cy="42" r="13.5" fill="white"/>
-  <circle cx="70" cy="43" r="8.1" fill="#222"/>
-  <path d="M 32 63 Q 50 82, 68 63"
-        stroke="#222" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+  <line x1="21" y1="28" x2="41" y2="28" stroke="#222" stroke-width="4" stroke-linecap="round"/>
+  <line x1="59" y1="28" x2="79" y2="28" stroke="#222" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="31" cy="42" r="17" fill="white" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
+  <circle cx="69" cy="42" r="17" fill="white" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
+  <circle cx="28.5" cy="44" r="8.5" fill="#222"/>
+  <circle cx="66.5" cy="44" r="8.5" fill="#222"/>
+  <circle cx="31.5" cy="39" r="2.55" fill="white"/>
+  <circle cx="69.5" cy="39" r="2.55" fill="white"/>
+  <circle cx="18" cy="60" r="6" fill="rgba(255,80,120,0.45)"/>
+  <circle cx="82" cy="60" r="6" fill="rgba(255,80,120,0.45)"/><path d="M 40 67 Q 50 74, 60 67"
+            stroke="#222" stroke-width="4.5" fill="none" stroke-linecap="round"/>
 
   <text x="90" y="288"
         font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
         font-weight="900"
-        font-size="45"
+        font-size="42"
         fill="white"
-        stroke="rgba(0,0,0,0.55)"
-        stroke-width="3.6"
+        stroke="rgba(0,0,0,0.6)"
+        stroke-width="4.2"
         paint-order="stroke fill"
         text-anchor="end">3</text>
 </svg>

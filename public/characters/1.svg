@@ -1,22 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <rect x="0" y="0" width="100" height="100" fill="#E74C3C" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="0" y="0" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="0" y="82" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
+  <rect x="0" y="0" width="100" height="100" fill="#E74C3C" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="0" y="0" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="0" y="80" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
 
-  <circle cx="31" cy="42" r="13.5" fill="white"/>
-  <circle cx="32" cy="43" r="8.1" fill="#222"/>
-  <circle cx="69" cy="42" r="13.5" fill="white"/>
-  <circle cx="70" cy="43" r="8.1" fill="#222"/>
-  <path d="M 32 63 Q 50 82, 68 63"
-        stroke="#222" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+  <line x1="21" y1="28" x2="41" y2="28" stroke="#222" stroke-width="4" stroke-linecap="round"/>
+  <line x1="59" y1="28" x2="79" y2="28" stroke="#222" stroke-width="4" stroke-linecap="round"/>
+  <ellipse cx="31" cy="42" rx="13" ry="7.000000000000001" fill="white" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
+  <ellipse cx="69" cy="42" rx="13" ry="7.000000000000001" fill="white" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
+  <circle cx="31" cy="42" r="4.9" fill="#222"/>
+  <circle cx="69" cy="42" r="4.9" fill="#222"/>
+  <circle cx="18" cy="60" r="6" fill="rgba(255,140,170,0.55)"/>
+  <circle cx="82" cy="60" r="6" fill="rgba(255,140,170,0.55)"/><path d="M 28 60 Q 50 88, 72 60 Z"
+            fill="#222" stroke="#222" stroke-width="4.5" stroke-linejoin="round"/>
+    <path d="M 28 60 Q 50 66, 72 60"
+            stroke="white" stroke-width="6.3" fill="white" stroke-linecap="round"/>
 
   <text x="90" y="88"
         font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
         font-weight="900"
-        font-size="45"
+        font-size="42"
         fill="white"
-        stroke="rgba(0,0,0,0.55)"
-        stroke-width="3.6"
+        stroke="rgba(0,0,0,0.6)"
+        stroke-width="4.2"
         paint-order="stroke fill"
         text-anchor="end">1</text>
 </svg>

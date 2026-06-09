@@ -1,73 +1,78 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 600" width="300" height="600">
-  <rect x="0" y="500" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="0" y="500" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="0" y="582" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
-  <rect x="100" y="500" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="100" y="500" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="100" y="582" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
-  <rect x="200" y="500" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="200" y="500" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="200" y="582" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
-  <rect x="0" y="400" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="0" y="400" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="0" y="482" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
-  <rect x="100" y="400" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="100" y="400" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="100" y="482" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
-  <rect x="200" y="400" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="200" y="400" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="200" y="482" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
-  <rect x="0" y="300" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="0" y="300" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="0" y="382" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
-  <rect x="100" y="300" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="100" y="300" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="100" y="382" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
-  <rect x="200" y="300" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="200" y="300" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="200" y="382" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
-  <rect x="0" y="200" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="0" y="200" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="0" y="282" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
-  <rect x="100" y="200" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="100" y="200" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="100" y="282" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
-  <rect x="200" y="200" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="200" y="200" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="200" y="282" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
-  <rect x="0" y="100" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="0" y="100" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="0" y="182" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
-  <rect x="100" y="100" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="100" y="100" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="100" y="182" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
-  <rect x="200" y="100" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="200" y="100" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="200" y="182" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
-  <rect x="0" y="0" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="0" y="0" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="0" y="82" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
-  <rect x="100" y="0" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="100" y="0" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="100" y="82" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
-  <rect x="200" y="0" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
-  <rect x="200" y="0" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
-  <rect x="200" y="82" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
+  <rect x="0" y="500" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="0" y="500" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="0" y="580" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
+  <rect x="100" y="500" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="100" y="500" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="100" y="580" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
+  <rect x="200" y="500" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="200" y="500" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="200" y="580" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
+  <rect x="0" y="400" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="0" y="400" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="0" y="480" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
+  <rect x="100" y="400" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="100" y="400" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="100" y="480" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
+  <rect x="200" y="400" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="200" y="400" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="200" y="480" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
+  <rect x="0" y="300" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="0" y="300" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="0" y="380" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
+  <rect x="100" y="300" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="100" y="300" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="100" y="380" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
+  <rect x="200" y="300" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="200" y="300" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="200" y="380" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
+  <rect x="0" y="200" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="0" y="200" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="0" y="280" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
+  <rect x="100" y="200" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="100" y="200" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="100" y="280" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
+  <rect x="200" y="200" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="200" y="200" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="200" y="280" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
+  <rect x="0" y="100" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="0" y="100" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="0" y="180" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
+  <rect x="100" y="100" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="100" y="100" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="100" y="180" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
+  <rect x="200" y="100" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="200" y="100" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="200" y="180" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
+  <rect x="0" y="0" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="0" y="0" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="0" y="80" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
+  <rect x="100" y="0" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="100" y="0" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="100" y="80" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
+  <rect x="200" y="0" width="100" height="100" fill="#34495E" stroke="rgba(0,0,0,0.28)" stroke-width="1.5"/>
+  <rect x="200" y="0" width="100" height="20" fill="rgba(255,255,255,0.22)"/>
+  <rect x="200" y="80" width="100" height="20" fill="rgba(0,0,0,0.14)"/>
 
-  <circle cx="131" cy="42" r="13.5" fill="white"/>
-  <circle cx="132" cy="43" r="8.1" fill="#222"/>
-  <circle cx="169" cy="42" r="13.5" fill="white"/>
-  <circle cx="170" cy="43" r="8.1" fill="#222"/>
-  <path d="M 132 63 Q 150 82, 168 63"
-        stroke="#222" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+  <line x1="121" y1="28" x2="141" y2="28" stroke="#222" stroke-width="4" stroke-linecap="round"/>
+  <line x1="159" y1="28" x2="179" y2="28" stroke="#222" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="131" cy="42" r="13.5" fill="white" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
+  <circle cx="169" cy="42" r="13.5" fill="white" stroke="rgba(0,0,0,0.15)" stroke-width="0.5"/>
+  <circle cx="128.5" cy="43" r="7.829999999999999" fill="#222"/>
+  <circle cx="166.5" cy="43" r="7.829999999999999" fill="#222"/>
+  <circle cx="118" cy="60" r="6" fill="rgba(255,140,170,0.55)"/>
+  <circle cx="182" cy="60" r="6" fill="rgba(255,140,170,0.55)"/><path d="M 128 60 Q 150 88, 172 60 Z"
+            fill="#222" stroke="#222" stroke-width="4.5" stroke-linejoin="round"/>
+    <path d="M 128 60 Q 150 66, 172 60"
+            stroke="white" stroke-width="6.3" fill="white" stroke-linecap="round"/>
 
   <text x="290" y="588"
         font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
         font-weight="900"
-        font-size="45"
+        font-size="42"
         fill="white"
-        stroke="rgba(0,0,0,0.55)"
-        stroke-width="3.6"
+        stroke="rgba(0,0,0,0.6)"
+        stroke-width="4.2"
         paint-order="stroke fill"
         text-anchor="end">18</text>
 </svg>
