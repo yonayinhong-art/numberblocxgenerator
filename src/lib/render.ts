@@ -1,5 +1,5 @@
 import type { RenderContext, NValue, TierName } from './types';
-import { hasCharacterImage, renderTier1 } from './tier1';
+import { hasCharacterImage, renderTier1, markImageMissing } from './tier1';
 import { renderTier2 } from './tier2';
 import { renderTier3 } from './tier3';
 import { renderTier4 } from './tier4';
@@ -20,23 +20,35 @@ export interface RenderResult {
   overlay: { label: string; sub: string } | null;
 }
 
+function renderAlgorithmic(rc: RenderContext, n: NValue): RenderResult {
+  if (n === 'infinity') return { tier: 'tier5', overlay: renderTier5(rc, n) };
+  if (n <= 99) {
+    renderTier2(rc, n);
+    return { tier: 'tier2', overlay: null };
+  }
+  if (n <= 9999) {
+    renderTier3(rc, n);
+    return { tier: 'tier3', overlay: null };
+  }
+  if (n <= 1e9) {
+    renderTier4(rc, n);
+    return { tier: 'tier4', overlay: null };
+  }
+  return { tier: 'tier5', overlay: renderTier5(rc, n) };
+}
+
 export async function render(rc: RenderContext, n: NValue): Promise<RenderResult> {
   clearCanvas(rc);
   const tier = pickTier(n);
-  switch (tier) {
-    case 'image':
+  if (tier === 'image') {
+    try {
       await renderTier1(rc, n as number);
       return { tier, overlay: null };
-    case 'tier2':
-      renderTier2(rc, n as number);
-      return { tier, overlay: null };
-    case 'tier3':
-      renderTier3(rc, n as number);
-      return { tier, overlay: null };
-    case 'tier4':
-      renderTier4(rc, n as number);
-      return { tier, overlay: null };
-    case 'tier5':
-      return { tier, overlay: renderTier5(rc, n) };
+    } catch {
+      markImageMissing(n as number);
+      clearCanvas(rc);
+      return renderAlgorithmic(rc, n);
+    }
   }
+  return renderAlgorithmic(rc, n);
 }

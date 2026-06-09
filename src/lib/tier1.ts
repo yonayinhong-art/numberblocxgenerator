@@ -2,10 +2,15 @@ import type { RenderContext, NValue } from './types';
 import namedNumbers from '../data/named-numbers.json';
 
 const AVAILABLE = new Set<number>(namedNumbers.available);
+const knownMissing = new Set<number>();
 const imageCache = new Map<number, HTMLImageElement>();
 
 export function hasCharacterImage(n: NValue): n is number {
-  return typeof n === 'number' && AVAILABLE.has(n);
+  return typeof n === 'number' && AVAILABLE.has(n) && !knownMissing.has(n);
+}
+
+export function markImageMissing(n: number): void {
+  knownMissing.add(n);
 }
 
 function loadImage(n: number): Promise<HTMLImageElement> {
