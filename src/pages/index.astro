@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import Generator from '../components/Generator.tsx';
+---
+<Base
+  title="Numberblocks Generator — Play Online, No Lag"
+  description="Build any Numberblock from 1 to infinity. Fast, mobile-friendly, with prime/square/triangular clubs. Free fan-made tool."
+>
+  <header class="bg-white/80 backdrop-blur border-b border-orange-100">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <h1 class="text-lg md:text-2xl font-black tracking-tight text-gray-800">
+        <span class="text-red-500">Number</span><span class="text-blue-500">blocx</span> Generator
+      </h1>
+      <div class="text-xs md:text-sm text-gray-500 font-semibold hidden sm:flex items-center gap-3">
+        <span>⚡ No Lag</span>
+        <span>♾️ Big Numbers</span>
+        <span>🏆 Clubs</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <Generator client:load />
+    <section class="max-w-3xl mx-auto px-4 py-10 prose prose-sm md:prose">
+      <h2>How it works</h2>
+      <p>Type any number from 1 to infinity. We build a Numberblock-style character on the spot — no waiting, no lag on phones or school laptops.</p>
+      <h2>Famous numbers to try</h2>
+      <ul>
+        <li><a href="/?n=2520">2520</a> — joins the most clubs</li>
+        <li><a href="/?n=1024">1024</a> — a power of 2</li>
+        <li><a href="/?n=144">144</a> — perfect square of 12</li>
+        <li><a href="/?n=infinity">∞</a> — the biggest number, forever</li>
+      </ul>
+      <p>Curious what a <a href="/clubs">club</a> is? Check the explainer.</p>
+    </section>
+  </main>
+</Base>

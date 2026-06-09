@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480">
+  <defs>
+    <linearGradient id="grad-19" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff84b6"/>
+      <stop offset="50%" stop-color="#FF6B9D"/>
+      <stop offset="100%" stop-color="#e65284"/>
+    </linearGradient>
+  </defs>
+  <rect x="70" y="340" width="100" height="100" rx="10" fill="url(#grad-19)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="78" y="348" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="170" y="340" width="100" height="100" rx="10" fill="url(#grad-19)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="178" y="348" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="270" y="340" width="100" height="100" rx="10" fill="url(#grad-19)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="278" y="348" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="370" y="340" width="100" height="100" rx="10" fill="url(#grad-19)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="378" y="348" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="470" y="340" width="100" height="100" rx="10" fill="url(#grad-19)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="478" y="348" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="70" y="240" width="100" height="100" rx="10" fill="url(#grad-19)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="78" y="248" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="170" y="240" width="100" height="100" rx="10" fill="url(#grad-19)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="178" y="248" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="270" y="240" width="100" height="100" rx="10" fill="url(#grad-19)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="278" y="248" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="370" y="240" width="100" height="100" rx="10" fill="url(#grad-19)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="378" y="248" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="470" y="240" width="100" height="100" rx="10" fill="url(#grad-19)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="478" y="248" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="70" y="140" width="100" height="100" rx="10" fill="url(#grad-19)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="78" y="148" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="170" y="140" width="100" height="100" rx="10" fill="url(#grad-19)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="178" y="148" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="270" y="140" width="100" height="100" rx="10" fill="url(#grad-19)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="278" y="148" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="370" y="140" width="100" height="100" rx="10" fill="url(#grad-19)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="378" y="148" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="470" y="140" width="100" height="100" rx="10" fill="url(#grad-19)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="478" y="148" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="120" y="40" width="100" height="100" rx="10" fill="url(#grad-19)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="128" y="48" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="220" y="40" width="100" height="100" rx="10" fill="url(#grad-19)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="228" y="48" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="320" y="40" width="100" height="100" rx="10" fill="url(#grad-19)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="328" y="48" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="420" y="40" width="100" height="100" rx="10" fill="url(#grad-19)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  
+  <rect x="428" y="48" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+
+
+  <circle cx="299" cy="90" r="16" fill="white" stroke="#1a1a1a" stroke-width="2.5"/>
+  <circle cx="341" cy="90" r="16" fill="white" stroke="#1a1a1a" stroke-width="2.5"/>
+  <circle cx="299" cy="91" r="10.4" fill="#1a1a1a"/>
+  <circle cx="341" cy="91" r="10.4" fill="#1a1a1a"/>
+  <path d="M 302.2 83.6 L 304.12 87.6 L 307.8 89.2 L 304.12 90.8 L 302.2 94.8 L 300.28 90.8 L 296.6 89.2 L 300.28 87.6 Z" fill="white"/>
+  <path d="M 344.2 83.6 L 346.12 87.6 L 349.8 89.2 L 346.12 90.8 L 344.2 94.8 L 342.28 90.8 L 338.6 89.2 L 342.28 87.6 Z" fill="white"/>
+  <path d="M 298 104 Q 320 136, 342 104 Z"
+        fill="#3D1820" stroke="#1a1a1a" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M 300 104 Q 313 110, 327 110 Q 340 104, 300 104"
+        fill="white"/>
+  <ellipse cx="320" cy="124" rx="12" ry="8" fill="#FF7C8C"/>
+  <line x1="320" y1="118" x2="320" y2="130" stroke="#E84B5C" stroke-width="1.5"/>
+
+    <path d="M 30 217 L 33.25 226.75 L 43 230 L 33.25 233.25 L 30 243 L 26.75 233.25 L 17 230 L 26.75 226.75 Z"
+          fill="#FFEB3B" stroke="#FFA500" stroke-width="1"/>
+    <path d="M 605 245 L 607.5 252.5 L 615 255 L 607.5 257.5 L 605 265 L 602.5 257.5 L 595 255 L 602.5 252.5 Z"
+          fill="#FFEB3B" stroke="#FFA500" stroke-width="1"/>
+    <path d="M 40 432 L 42 438 L 48 440 L 42 442 L 40 448 L 38 442 L 32 440 L 38 438 Z"
+          fill="#FFEB3B" stroke="#FFA500" stroke-width="1"/>
+    <path d="M 595 419 L 597.75 427.25 L 606 430 L 597.75 432.75 L 595 441 L 592.25 432.75 L 584 430 L 592.25 427.25 Z"
+          fill="#FFEB3B" stroke="#FFA500" stroke-width="1"/>
+
+  <text x="625" y="465"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-weight="900"
+        font-size="45"
+        fill="white"
+        stroke="rgba(0,0,0,0.6)"
+        stroke-width="4.5"
+        paint-order="stroke fill"
+        text-anchor="end">19</text>
+</svg>

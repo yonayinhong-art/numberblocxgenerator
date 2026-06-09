@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 480" width="340" height="480">
+  <defs>
+    <linearGradient id="grad-8" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4d6277"/>
+      <stop offset="50%" stop-color="#34495E"/>
+      <stop offset="100%" stop-color="#1b3045"/>
+    </linearGradient>
+  </defs>
+  <rect x="70" y="340" width="100" height="100" rx="10" fill="url(#grad-8)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  <g clip-path="inset(0 round 10)"><line x1="40" y1="440" x2="140" y2="340" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="70" y1="440" x2="170" y2="340" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="100" y1="440" x2="200" y2="340" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="130" y1="440" x2="230" y2="340" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="160" y1="440" x2="260" y2="340" stroke="rgba(255,255,255,0.18)" stroke-width="8"/></g>
+  <rect x="78" y="348" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="170" y="340" width="100" height="100" rx="10" fill="url(#grad-8)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  <g clip-path="inset(0 round 10)"><line x1="140" y1="440" x2="240" y2="340" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="170" y1="440" x2="270" y2="340" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="200" y1="440" x2="300" y2="340" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="230" y1="440" x2="330" y2="340" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="260" y1="440" x2="360" y2="340" stroke="rgba(255,255,255,0.18)" stroke-width="8"/></g>
+  <rect x="178" y="348" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="70" y="240" width="100" height="100" rx="10" fill="url(#grad-8)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  <g clip-path="inset(0 round 10)"><line x1="40" y1="340" x2="140" y2="240" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="70" y1="340" x2="170" y2="240" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="100" y1="340" x2="200" y2="240" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="130" y1="340" x2="230" y2="240" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="160" y1="340" x2="260" y2="240" stroke="rgba(255,255,255,0.18)" stroke-width="8"/></g>
+  <rect x="78" y="248" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="170" y="240" width="100" height="100" rx="10" fill="url(#grad-8)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  <g clip-path="inset(0 round 10)"><line x1="140" y1="340" x2="240" y2="240" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="170" y1="340" x2="270" y2="240" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="200" y1="340" x2="300" y2="240" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="230" y1="340" x2="330" y2="240" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="260" y1="340" x2="360" y2="240" stroke="rgba(255,255,255,0.18)" stroke-width="8"/></g>
+  <rect x="178" y="248" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="70" y="140" width="100" height="100" rx="10" fill="url(#grad-8)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  <g clip-path="inset(0 round 10)"><line x1="40" y1="240" x2="140" y2="140" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="70" y1="240" x2="170" y2="140" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="100" y1="240" x2="200" y2="140" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="130" y1="240" x2="230" y2="140" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="160" y1="240" x2="260" y2="140" stroke="rgba(255,255,255,0.18)" stroke-width="8"/></g>
+  <rect x="78" y="148" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="170" y="140" width="100" height="100" rx="10" fill="url(#grad-8)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  <g clip-path="inset(0 round 10)"><line x1="140" y1="240" x2="240" y2="140" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="170" y1="240" x2="270" y2="140" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="200" y1="240" x2="300" y2="140" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="230" y1="240" x2="330" y2="140" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="260" y1="240" x2="360" y2="140" stroke="rgba(255,255,255,0.18)" stroke-width="8"/></g>
+  <rect x="178" y="148" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="70" y="40" width="100" height="100" rx="10" fill="url(#grad-8)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  <g clip-path="inset(0 round 10)"><line x1="40" y1="140" x2="140" y2="40" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="70" y1="140" x2="170" y2="40" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="100" y1="140" x2="200" y2="40" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="130" y1="140" x2="230" y2="40" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="160" y1="140" x2="260" y2="40" stroke="rgba(255,255,255,0.18)" stroke-width="8"/></g>
+  <rect x="78" y="48" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+  <rect x="170" y="40" width="100" height="100" rx="10" fill="url(#grad-8)" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  <g clip-path="inset(0 round 10)"><line x1="140" y1="140" x2="240" y2="40" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="170" y1="140" x2="270" y2="40" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="200" y1="140" x2="300" y2="40" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="230" y1="140" x2="330" y2="40" stroke="rgba(255,255,255,0.18)" stroke-width="8"/><line x1="260" y1="140" x2="360" y2="40" stroke="rgba(255,255,255,0.18)" stroke-width="8"/></g>
+  <rect x="178" y="48" width="84" height="15" rx="5" fill="rgba(255,255,255,0.32)"/>
+
+  <path d="M 225 260 Q 245 255, 270 220"
+        stroke="#162b40" stroke-width="14.000000000000002" fill="none" stroke-linecap="round"/>
+  <circle cx="270" cy="220" r="18" fill="#34495E" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="264" y1="215" x2="258" y2="200" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="276" y1="215" x2="282" y2="200" stroke="#1a1a1a" stroke-width="2.5" stroke-linecap="round"/>
+
+  <path d="M 139 92 Q 149 80, 159 92"
+        stroke="#1a1a1a" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="191" cy="90" rx="14.72" ry="16" fill="white" stroke="#1a1a1a" stroke-width="2.5"/>
+  <ellipse cx="192.5" cy="92" rx="8.8" ry="10.4" fill="#1a1a1a"/>
+  <circle cx="195" cy="84.4" r="4.48" fill="white"/>
+  <circle cx="140" cy="98" r="1.7999999999999998" fill="rgba(255,255,255,0.7)"/>
+  <circle cx="136" cy="104" r="1.7999999999999998" fill="rgba(255,255,255,0.7)"/>
+  <circle cx="142" cy="106" r="1.7999999999999998" fill="rgba(255,255,255,0.7)"/>
+  <circle cx="200" cy="98" r="1.7999999999999998" fill="rgba(255,255,255,0.7)"/>
+  <circle cx="204" cy="104" r="1.7999999999999998" fill="rgba(255,255,255,0.7)"/>
+  <circle cx="198" cy="106" r="1.7999999999999998" fill="rgba(255,255,255,0.7)"/><ellipse cx="170" cy="114" rx="8" ry="10"
+            fill="#3D1820" stroke="#1a1a1a" stroke-width="2.5"/>
+
+    <path d="M 30 217 L 33.25 226.75 L 43 230 L 33.25 233.25 L 30 243 L 26.75 233.25 L 17 230 L 26.75 226.75 Z"
+          fill="#FFEB3B" stroke="#FFA500" stroke-width="1"/>
+    <path d="M 305 245 L 307.5 252.5 L 315 255 L 307.5 257.5 L 305 265 L 302.5 257.5 L 295 255 L 302.5 252.5 Z"
+          fill="#FFEB3B" stroke="#FFA500" stroke-width="1"/>
+    <path d="M 40 432 L 42 438 L 48 440 L 42 442 L 40 448 L 38 442 L 32 440 L 38 438 Z"
+          fill="#FFEB3B" stroke="#FFA500" stroke-width="1"/>
+    <path d="M 295 419 L 297.75 427.25 L 306 430 L 297.75 432.75 L 295 441 L 292.25 432.75 L 284 430 L 292.25 427.25 Z"
+          fill="#FFEB3B" stroke="#FFA500" stroke-width="1"/>
+
+  <text x="325" y="465"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-weight="900"
+        font-size="45"
+        fill="white"
+        stroke="rgba(0,0,0,0.6)"
+        stroke-width="4.5"
+        paint-order="stroke fill"
+        text-anchor="end">8</text>
+</svg>

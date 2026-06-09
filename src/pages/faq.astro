@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="FAQ — Numberblocxgenerator"
+  description="Common questions about the Numberblocks generator: what version this is, how big the numbers can go, why it doesn't lag."
+>
+  <header class="bg-white/80 backdrop-blur border-b border-orange-100">
+    <div class="max-w-6xl mx-auto px-4 py-3">
+      <a href="/" class="text-lg md:text-2xl font-black tracking-tight text-gray-800">
+        <span class="text-red-500">Number</span><span class="text-blue-500">blocx</span> Generator
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-8 prose prose-sm md:prose">
+    <h1>FAQ</h1>
+
+    <h2>How big can the number go?</h2>
+    <p>Type any whole number up to 9,007,199,254,740,991 (the JavaScript safe integer limit), or type <code>infinity</code>.</p>
+
+    <h2>Why doesn't it lag like the Scratch version?</h2>
+    <p>The Scratch version tries to draw every block, which crashes browsers around 30,000+. We switch to a compressed grid above 100 and to abstract mode above 10,000 — so any size renders in under 100ms.</p>
+
+    <h2>Looking for the original Scratch version?</h2>
+    <p>Search "numberblocks generator scratch" on Scratch or TurboWarp.</p>
+
+    <h2>Can I share a link to a specific number?</h2>
+    <p>Yes. Tap "Copy Link" and the URL will include the current number — your friend opens it and sees the same Numberblock.</p>
+
+    <h2>Can I download the picture?</h2>
+    <p>Tap "Save PNG" to download the current view as an image.</p>
+
+    <h2>Is this affiliated with Numberblocks the TV show?</h2>
+    <p>No. This is a fan-made tool. Numberblocks is © Alphablocks Ltd / BBC Studios.</p>
+  </main>
+</Base>
