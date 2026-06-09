@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <rect x="0" y="200" width="100" height="100" fill="#FF6B9D" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  <rect x="0" y="200" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
+  <rect x="0" y="282" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
+  <rect x="100" y="200" width="100" height="100" fill="#FF6B9D" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  <rect x="100" y="200" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
+  <rect x="100" y="282" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
+  <rect x="200" y="200" width="100" height="100" fill="#FF6B9D" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  <rect x="200" y="200" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
+  <rect x="200" y="282" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
+  <rect x="0" y="100" width="100" height="100" fill="#FF6B9D" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  <rect x="0" y="100" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
+  <rect x="0" y="182" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
+  <rect x="100" y="100" width="100" height="100" fill="#FF6B9D" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  <rect x="100" y="100" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
+  <rect x="100" y="182" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
+  <rect x="200" y="100" width="100" height="100" fill="#FF6B9D" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  <rect x="200" y="100" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
+  <rect x="200" y="182" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
+  <rect x="0" y="0" width="100" height="100" fill="#FF6B9D" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  <rect x="0" y="0" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
+  <rect x="0" y="82" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
+  <rect x="100" y="0" width="100" height="100" fill="#FF6B9D" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  <rect x="100" y="0" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
+  <rect x="100" y="82" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
+  <rect x="200" y="0" width="100" height="100" fill="#FF6B9D" stroke="rgba(0,0,0,0.25)" stroke-width="1.5"/>
+  <rect x="200" y="0" width="100" height="18" fill="rgba(255,255,255,0.2)"/>
+  <rect x="200" y="82" width="100" height="18" fill="rgba(0,0,0,0.12)"/>
+
+  <circle cx="131" cy="42" r="13.5" fill="white"/>
+  <circle cx="132" cy="43" r="8.1" fill="#222"/>
+  <circle cx="169" cy="42" r="13.5" fill="white"/>
+  <circle cx="170" cy="43" r="8.1" fill="#222"/>
+  <path d="M 132 63 Q 150 82, 168 63"
+        stroke="#222" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+
+  <text x="290" y="288"
+        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        font-weight="900"
+        font-size="45"
+        fill="white"
+        stroke="rgba(0,0,0,0.55)"
+        stroke-width="3.6"
+        paint-order="stroke fill"
+        text-anchor="end">9</text>
+</svg>
