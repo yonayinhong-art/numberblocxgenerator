@@ -1,0 +1,37 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+}
+const { title, description, canonical } = Astro.props;
+const site = Astro.site?.toString() ?? 'https://numberblocxgenerator.com';
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, site).toString();
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body class="min-h-screen flex flex-col">
+  <slot />
+  <footer class="border-t border-orange-100 mt-12 py-6 bg-white/60 text-center text-xs text-gray-500 space-y-1">
+    <p>Fan-made tool. Numberblocks is © Alphablocks Ltd / BBC Studios. Not affiliated, endorsed, or sponsored by them.</p>
+    <p>
+      Made by a fan to help kids explore numbers ·
+      <a href="/faq" class="underline hover:text-gray-700">FAQ</a> ·
+      <a href="/about" class="underline hover:text-gray-700">About</a> ·
+      <a href="/clubs" class="underline hover:text-gray-700">Clubs</a>
+    </p>
+  </footer>
+</body>
+</html>
